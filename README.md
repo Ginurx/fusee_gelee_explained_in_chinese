@@ -422,12 +422,12 @@ respond_to_control_request(dma_buffer, length_to_send);
 在这个时机，正常的启动代码尚未执行完，一些芯片的安全措施尚未启用，例如TX1的芯片会在启动时把SBK（Secure Boot Key）和SSK（Secure Storage Key）复制到硬件加密的钥匙槽中，在boot ROM完成时会lock down这些key，lock down之后就无法改写和访问了。此时由于这些措施未生效，相当于用于设备的完全访问权限。
 
 ![](Jetson_Security_and_Secure_Boot.png)
-slider show from https://www.brainshark.com/nvidia/Jetson_Security_SecureBoot?dm=5&pause=1&nrs=1&nodesktopflash=1
+slider show from https://www.brainshark.com/nvidia/Jetson_Security_SecureBoot
 
 有读者可能会好奇，密钥之类的数据存储在哪呢？Tegra存储这些数据的地方叫fuses，这些数据是出厂时烧录的，像TX1的DK（Device Key）是设备唯一，出厂烧录，外部无法访问的。
 
 ![](Jetson_Security_and_Secure_Boot2.png)
-slider show form https://www.brainshark.com/nvidia/Jetson_Security_SecureBoot?dm=5&pause=1&nrs=1&nodesktopflash=1
+slider show form https://www.brainshark.com/nvidia/Jetson_Security_SecureBoot
 
 漏洞Exploit的执行流程
 
